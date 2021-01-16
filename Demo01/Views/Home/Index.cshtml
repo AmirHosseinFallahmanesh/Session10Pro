@@ -1,0 +1,29 @@
+﻿@model MainPageViewModel
+@{
+  
+    ViewData["Title"] = "Home Page";
+}
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-2">
+
+                @foreach (var item in Model.Advertises)
+                {
+                    <p>@item.Title</p>
+                }
+
+            </div>
+
+            <div class="col-md-8">
+                @foreach (var item in Model.News)
+                {
+                    <p>@item.Title</p>
+                    <p>@item.Description</p>
+                }
+            </div>
+            @*categires list*@
+            @Html.Partial("_CategoryList",Model.Categories)
+
+        </div>
+    </div>
